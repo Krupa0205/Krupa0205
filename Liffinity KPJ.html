@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LIFFINITY — Dark Futuristic Community Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== GENERAL STYLES ===== */
+* {box-sizing:border-box; margin:0; padding:0; font-family:'Roboto',sans-serif;}
+:root{
+  --bg:#0D0D0D; --panel:#001F1F; --accent:#00FFAA; --neon:#00FFFF; --muted:#7fd7d7;
+}
+body {background-color:var(--bg); color:var(--neon); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased;}
+a {color:var(--neon); text-decoration:none;}
+a:hover {text-decoration:underline;}
+header {background-color:#111111; padding:20px; text-align:center; border-bottom:2px solid var(--neon);}
+header h1 {font-size:2.2rem; margin-bottom:8px; color:var(--accent);}
+header p {font-size:1rem; color:var(--neon);}
+nav {display:flex; justify-content:center; flex-wrap:wrap; background-color:#111111; padding:10px 0; border-bottom:1px solid var(--neon);}
+nav a {margin:5px 12px; padding:8px 14px; background-color:#001F1F; border-radius:8px; font-weight:700; transition:all 0.25s; color:var(--neon); font-size:0.95rem;}
+nav a:hover {background-color:var(--neon); color:#0D0D0D;}
+main {max-width:1200px; margin:28px auto; padding:0 20px;}
+section {margin-bottom:42px;}
+h2 {font-size:1.6rem; margin-bottom:12px; color:var(--neon); border-bottom:2px solid var(--accent); display:inline-block; padding-bottom:5px;}
+h3 {font-size:1.2rem; margin:10px 0; color:var(--accent);}
+p {margin-bottom:10px;}
+.collapsible {background-color:var(--panel); color:var(--neon); cursor:pointer; padding:12px; width:100%; border:none; text-align:left; outline:none; font-size:1rem; border-radius:8px; transition:0.25s; margin-top:8px;}
+.collapsible:hover, .collapsible.active {background-color:var(--accent); color:#0D0D0D;}
+.content {padding:12px 15px; display:none; overflow:hidden; background-color:#002222; border-radius:0 0 8px 8px; margin-bottom:12px;}
+.content p, .content a, .content button, .content input, .content select, .content textarea {margin:8px 0; display:block;}
+footer {background-color:#111111; padding:18px; text-align:center; color:var(--neon); border-top:2px solid var(--accent);}
+input, button, select, textarea {padding:8px; margin:6px 0; border-radius:6px; border:none; font-family:'Roboto',sans-serif;}
+button {cursor:pointer; background-color:var(--accent); color:#0D0D0D; font-weight:700;}
+button:hover {background-color:var(--neon); color:#0D0D0D;}
+.small {font-size:0.9rem;}
+.muted {color:var(--muted);}
+#story-output {max-height:260px; overflow-y:auto; margin-top:10px; padding:10px; background-color:#001F1F; border-radius:5px;}
+.budget-grid {display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+.budget-grid div {display:flex; flex-direction:column;}
+.contact-grid {display:grid; grid-template-columns:1fr; gap:10px;}
+.table {width:100%; border-collapse:collapse; margin-top:10px;}
+.table th, .table td {padding:8px; border-bottom:1px dashed #063636; text-align:left; font-size:0.95rem;}
+.flex {display:flex; gap:10px; align-items:center;}
+.row {display:flex; gap:10px;}
+.calendar {background:#001a1a; padding:12px; border-radius:8px; color:var(--neon); max-width:360px;}
+.calendar header {display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+.days {display:grid; grid-template-columns:repeat(7,1fr); gap:6px;}
+.day {padding:8px; text-align:center; border-radius:6px; background:#002b2b;}
+.today {background:linear-gradient(90deg,var(--accent),var(--neon)); color:#072222; font-weight:800;}
+@media(max-width:900px){.budget-grid{grid-template-columns:1fr;} nav a{margin:5px;padding:8px 10px;font-size:0.9rem;} h2{font-size:1.4rem;} h3{font-size:1.05rem;}}
+/* Embeds responsiveness */
+.embed-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;margin-top:8px}
+.embed-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>LIFFINITY by KPJ Group</h1>
+  <p>Smart and friendly digital companion — inclusive, age-based, and uplifting</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#kids">Kids Zone</a>
+  <a href="#teens">Teens Zone</a>
+  <a href="#adults">Adults Zone</a>
+  <a href="#seniors">Seniors Zone</a>
+  <a href="#disabilities">People with Disabilities</a>
+  <a href="#jobs">Job Seekers</a>
+  <a href="#Active">Active</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <h2>About LIFFINITY</h2>
+    <p>Lifinity is an all-age community website designed to help people learn, grow, connect, and challenge themselves. The site includes age-specific activities, skill challenges, peer zones, AI assistance area, achievement tracking and tools for daily life — all created by Krupa, Poorvi and Jiya (KPJ Group). Nexora was also designed by this team.</p>
+    <p>Contact: 📧 jiyatreesajames@gmail.com • poorvivashit@gmail.com • krupaks2012@gmail.com</p>
+  </section>
+
+  <!-- ===== KIDS ZONE ===== -->
+  <section id="kids">
+    <h2>1. Children (Kids Zone) 🧸</h2>
+
+    <button class="collapsible">Education Tools & Games</button>
+    <div class="content">
+      <a href="https://www.starfall.com" target="_blank">Starfall</a>
+      <a href="https://pbskids.org" target="_blank">PBS Kids</a>
+      <a href="https://www.funbrain.com" target="_blank">Funbrain</a>
+        <a href="https://www.gamesgames.com/games/kids-games" target="_blank">Gamesgames</a>
+    </div>
+    <button class="collapsible">Skill Discovery</button>
+    <div class="content">
+<a href="https://home.oxfordowl.co.uk/kids-activities/" target="_blank">Oxford Owl Activities</a>
+    </div>
+    <button class="collapsible">Story Time (Unlimited)</button>
+    <div class="content">
+      <button onclick="generateStory()">Show a Random Story</button>
+      <div id="story-output"></div>
+    </div>
+
+    <button class="collapsible">Kids Song Corner (Links + Embedded)</button>
+    <div class="content">
+      <p class="small muted">Links open YouTube. Press play on embedded players to listen on-site.</p>
+
+      <h3>Links</h3>
+      <a href="https://www.youtube.com/watch?v=CMNry4PE93Y" target="_blank">Kids Lullaby / Calm Song (YouTube)</a>
+      <a href="https://www.youtube.com/watch?v=VbfpW0pbvaU" target="_blank">Children's Learning Songs Playlist</a>
+
+      <h3>Embedded</h3>
+      <div class="embed-wrap">
+        <iframe src="https://www.youtube.com/embed/CMNry4PE93Y" title="Kids Lullaby" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== TEENS ZONE ===== -->
+  <section id="teens">
+    <h2>2. Teenagers & Students (Youth Zone) 🎓</h2>
+
+    <button class="collapsible">Pomodoro Study Timer</button>
+    <div class="content">
+      <h4>Study Timer (Pomodoro)</h4>
+      <label for="timer-minutes">Set minutes:</label>
+      <input type="number" id="timer-minutes" min="1" max="120" value="25" aria-describedby="timer-desc" />
+      <div class="row">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+      <p id="timer-desc" class="small muted">Pomodoro style focus timer.</p>
+      <p id="timer-display" aria-live="polite" aria-atomic="true" style="font-weight:700; font-size:1.2rem; margin-top:8px;">25:00</p>
+    </div>
+
+    <button class="collapsible">Stress Relief Methods</button>
+    <div class="content">
+      <a href="https://zoelifepsychiatricservices.com/therapy-games-for-teens/" target="_blank">Stress Relief Games</a>
+    </div>
+
+    <button class="collapsible">Quiz Time</button>
+    <div class="content">
+      <label for="quiz-subject">Choose subject:</label>
+      <select id="quiz-subject">
+        <option value="Math">Math</option>
+        <option value="Science">Science</option>
+        <option value="English">English</option>
+      </select>
+      <button onclick="startQuiz()">Start Quiz</button>
+      <div id="quiz-container"></div>
+    </div>
+
+    <button class="collapsible">Teen Song Corner (Links + Embedded)</button>
+    <div class="content">
+      <p class="small muted">Curated calming and focus playlists for studying.</p>
+      <a href="https://www.youtube.com/watch?v=5qap5aO4i9A" target="_blank">Lo-fi Hip Hop Radio — Chill Beats</a>
+      <div class="embed-wrap" aria-hidden="false">
+        <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Lo-fi Chill" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== ADULTS ZONE ===== -->
+  <section id="adults">
+    <h2>3. Adults (Adult Zone) 👩‍💼👨‍💼</h2>
+
+    <button class="collapsible">Budget Planner (Quick)</button>
+    <div class="content">
+      <div class="budget-grid">
+        <div>
+          <label for="income">Monthly Income (AED):</label>
+          <input type="number" id="income" min="0" step="100" value="5000">
+        </div>
+        <div>
+          <label for="expenses">Monthly Expenses (AED):</label>
+          <input type="number" id="expenses" min="0" step="100" value="3000">
+        </div>
+        <div>
+          <label for="savingsGoal">Savings Goal (AED):</label>
+          <input type="number" id="savingsGoal" min="0" step="100" value="500">
+        </div>
+        <div>
+          <button onclick="calcBudget()">Calculate</button>
+          <button onclick="downloadBudget()">Download Summary</button>
+        </div>
+      </div>
+      <p id="budget-output" class="small"></p>
+    </div>
+
+    <button class="collapsible">Budget Organizer (Advanced)</button>
+    <div class="content">
+      <p class="small muted">Add categories, set amounts, and get a full breakdown. You can add unlimited categories.</p>
+      <div id="organizer-controls" class="flex">
+        <input id="cat-name" placeholder="Category name (e.g., Groceries)" />
+        <input id="cat-amount" type="number" placeholder="Amount (AED)" />
+        <button onclick="addCategory()">Add Category</button>
+        <button onclick="clearCategories()">Clear All</button>
+      </div>
+      <table class="table" id="cats-table">
+        <thead><tr><th>Category</th><th>Amount (AED)</th><th>Action</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div style="margin-top:10px;">
+        <button onclick="organizerDownloadCSV()">Download CSV</button>
+        <button onclick="organizerSummary()">Show Summary</button>
+      </div>
+      <p id="organizer-summary" class="small"></p>
+    </div>
+
+    <button class="collapsible">Entertainment Area</button>
+    <div class="content">
+      <a href="https://www.addictinggames.com/" target="_blank">Addicting Games</a>
+    </div>
+
+    <button class="collapsible">Adult Song Corner (Links + Embedded)</button>
+    <div class="content">
+      <p class="small muted">Music for relaxation, focus and motivation.</p>
+      <a href="https://www.youtube.com/watch?v=2Vv-BfVoq4g" target="_blank">Calm Piano Playlist</a>
+      <div class="embed-wrap">
+        <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Calm Piano" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== SENIORS ZONE ===== -->
+  <section id="seniors">
+    <h2>4. Elderly (Senior Zone) 👴👵</h2>
+
+    <button class="collapsible">Health & Medical Tips</button>
+    <div class="content">
+      <button onclick="generateHealthTip()">Show a Health Tip</button>
+      <div id="health-output" style="margin-top:10px;"></div>
+    </div>
+
+    <button class="collapsible">Memory Games & Riddles</button>
+    <div class="content">
+      <button onclick="showRiddle()">Show a Random Riddle</button>
+      <p id="riddle-question" style="margin-top:10px; font-weight:bold;"></p>
+      <input type="text" id="riddle-answer" placeholder="Type your answer here" />
+      <button onclick="checkRiddleAnswer()">Submit Answer</button>
+      <p id="riddle-feedback" style="margin-top:5px;"></p>
+    </div>
+
+    <button class="collapsible">Senior Song Corner (Links + Embedded)</button>
+    <div class="content">
+      <p class="small muted">Soothing old melodies and classics.</p>
+      <a href="https://www.youtube.com/watch?v=1zB0Jc9o7gQ" target="_blank">Classic Oldies Playlist</a>
+      <div class="embed-wrap">
+        <iframe src="https://www.youtube.com/embed/1zB0Jc9o7gQ" title="Classic oldies" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DISABILITIES ZONE ===== -->
+  <section id="disabilities">
+    <h2>5. People with Disabilities ♿</h2>
+
+    <button class="collapsible">Skill Building & Job Opportunities</button>
+    <div class="content">
+      <a href="https://ae.indeed.com/q-people-with-disabilities-l-dubai-jobs.html" target="_blank">Indeed Dubai - Disabilities Jobs</a>
+    </div>
+
+    <button class="collapsible">Weekly Quiz Leaderboard</button>
+    <div class="content">
+      <p id="leaderboard">Leaderboard will show weekly top scorers here.</p>
+    </div>
+
+    <button class="collapsible">Accessibility Song Corner (Links)</button>
+    <div class="content">
+      <a href="https://www.youtube.com/watch?v=DWcJFNfaw9c" target="_blank">Soothing & Accessible Playlist</a>
+    </div>
+  </section>
+
+  <!-- ===== JOB SEEKERS ZONE ===== -->
+  <section id="jobs">
+    <h2>6. Job Seekers 💼</h2>
+
+    <button class="collapsible">Job Opportunities (UAE)</button>
+    <div class="content">
+      <a href="https://ae.indeed.com/" target="_blank">Indeed UAE</a>
+      <a href="https://bestonlineresume.com/?wickedsource=google&wickedid=CjwKCAiA0eTJBhBaEiwA-Pa-hTaNELzGFsAKIJZoy3wmpXDjP4Zk82wTRXAqa7dF5NSOWmU6OM7FHBoCjp4QAvD_BwE&wickedid=756546237007&wcid=22637628891&wv=4&utm_source=google_ads&utm_account=RD&gad_source=1&gad_campaignid=22637628891&gbraid=0AAAAACblCAQLN-ivHe-vxoRo8HqP02OSK&gclid=CjwKCAiA0eTJBhBaEiwA-Pa-hTaNELzGFsAKIJZoy3wmpXDjP4Zk82wTRXAqa7dF5NSOWmU6OM7FHBoCjp4QAvD_BwE" target="_blank">CV / Resume Maker (bestonlineresume.com)</a>
+    </div>
+
+    <button class="collapsible">Job Opportunities (India)</button>
+    <div class="content">
+      <a href="https://in.indeed.com/" target="_blank">Indeed India</a>
+    </div>
+
+    <button class="collapsible">Interview Tips (Unlimited)</button>
+    <div class="content">
+      <p class="small muted">Read tips or add your own. Tips are stored locally in your browser (so they are unlimited for you).</p>
+      <div class="flex">
+        <input id="new-tip" placeholder="Add an interview tip..." />
+        <button onclick="addTip()">Add Tip</button>
+      </div>
+      <div style="margin-top:10px;">
+        <button onclick="showRandomTip()">Show Random Tip</button>
+        <button onclick="showAllTips()">Show All Tips</button>
+        <button onclick="clearTips()">Clear Tips</button>
+      </div>
+      <div id="tips-output" style="margin-top:12px;"></div>
+    </div>
+
+    <button class="collapsible">Job Seeker Song Corner (Links)</button>
+    <div class="content">
+      <a href="https://www.youtube.com/watch?v=UceaB4D0jpo" target="_blank">Motivational Playlist</a>
+    </div>
+  </section>
+
+  <!-- ===== Active Counter:Calender,Quotes,songs ===== -->
+  <section id="extras">
+    <h2>Extras — Positivity & Tools</h2>
+
+    <button class="collapsible">Weekly Quote Corner (Unlimited)</button>
+    <div class="content">
+      <p class="small muted">Generate weekly quotes or add your favourites. Stored locally so unlimited for you.</p>
+      <div class="flex">
+        <input id="new-quote" placeholder="Add a quote..." />
+        <input id="quote-author" placeholder="Author (optional)" />
+        <button onclick="addQuote()">Add Quote</button>
+      </div>
+      <div style="margin-top:8px;">
+        <button onclick="showQuoteOfWeek()">Show Quote of the Week</button>
+        <button onclick="showRandomQuote()">Show Random Quote</button>
+        <button onclick="showAllQuotes()">Show All Quotes</button>
+        <button onclick="clearQuotes()">Clear Quotes</button>
+      </div>
+      <div id="quote-output" style="margin-top:12px;"></div>
+    </div>
+
+    <button class="collapsible">Song Corner (Global Mix)</button>
+    <div class="content">
+      <p class="small muted">A mixed approach: links + embeds across ages — curated to soothe, focus, and uplift.</p>
+
+      <h3>Focus / Study (Teens & Adults)</h3>
+      <a href="https://www.youtube.com/watch?v=5qap5aO4i9A" target="_blank">Lo-fi Chill Beats</a>
+      <div class="embed-wrap"><iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Lo-fi Chill" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+      <h3>Calm & Soothing (All ages)</h3>
+      <a href="https://www.youtube.com/watch?v=2Vv-BfVoq4g" target="_blank">Calm Piano</a>
+      <div class="embed-wrap"><iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Calm Piano" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+      <h3>Kids</h3>
+      <a href="https://www.youtube.com/watch?v=CMNry4PE93Y" target="_blank">Kids Lullaby</a>
+
+      <h3>Seniors</h3>
+      <a href="https://www.youtube.com/watch?v=1zB0Jc9o7gQ" target="_blank">Classic Oldies</a>
+    </div>
+
+    <button class="collapsible">Interactive Calendar</button>
+    <div class="content" style="display:block;">
+      <div class="calendar" id="mini-calendar">
+        <header>
+          <button onclick="prevMonth()">◀</button>
+          <div id="calendar-month" style="font-weight:800;"></div>
+          <button onclick="nextMonth()">▶</button>
+        </header>
+        <div class="days" id="calendar-days"></div>
+      </div>
+      <p class="small muted" style="margin-top:10px;">Use the arrows to change months. Today's date is highlighted. You can add simple notes to any date.</p>
+      <div style="margin-top:8px;">
+        <input id="note-date" placeholder="YYYY-MM-DD" />
+        <input id="note-text" placeholder="Note for date..." />
+        <button onclick="saveNote()">Save Note</button>
+        <button onclick="showNotes()">Show Notes</button>
+      </div>
+      <div id="notes-output" style="margin-top:8px;"></div>
+    </div>
+
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div id="google_translate_element" style="margin-bottom:15px;"></div>
+    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="contact-grid">
+      <label for="recipient">Recipient:</label>
+      <select id="recipient">
+        <option value="support">Support</option>
+        <option value="feedback">Feedback</option>
+      </select>
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 LIFFINITY by KPJ Group | All Rights Reserved
+</footer>
+
+<script>
+/* ---------------- COLLAPSIBLES ---------------- */
+const coll = document.getElementsByClassName("collapsible");
+for(let i=0;i<coll.length;i++){
+  coll[i].addEventListener("click",function(){
+    this.classList.toggle("active");
+    const content=this.nextElementSibling;
+    content.style.display=content.style.display==="block"?"none":"block";
+  });
+}
+
+/* ---------------- STORY GENERATOR ---------------- */
+const stories=[
+  "Once upon a time, a brave little rabbit explored a magical forest...",
+  "Tommy the turtle went on an adventure to find hidden treasures...",
+  "Lila found a mysterious key that unlocked a secret garden...",
+  "A tiny dragon named Drago learned how to fly and help his friends..."
+];
+function generateStory(){
+  const storyOutput=document.getElementById("story-output");
+  const randomStory=stories[Math.floor(Math.random()*stories.length)];
+  const p=document.createElement("p");
+  p.textContent=randomStory;
+  storyOutput.appendChild(p);
+  storyOutput.scrollTop=storyOutput.scrollHeight;
+}
+
+/* ---------------- POMODORO TIMER ---------------- */
+let timerInterval;
+let remainingTime=1500;
+function startTimer(){
+  let minutes=parseInt(document.getElementById("timer-minutes").value) || 25;
+  remainingTime=minutes*60;
+  clearInterval(timerInterval);
+  document.getElementById("timer-display").textContent = `${String(minutes).padStart(2,'0')}:00`;
+  timerInterval=setInterval(()=>{
+    if(remainingTime<=0){clearInterval(timerInterval); alert("Time's up! ✅"); return;}
+    remainingTime--;
+    let m=Math.floor(remainingTime/60).toString().padStart(2,"0");
+    let s=(remainingTime%60).toString().padStart(2,"0");
+    document.getElementById("timer-display").textContent=`${m}:${s}`;
+  },1000);
+}
+function pauseTimer(){clearInterval(timerInterval);}
+function resetTimer(){
+  clearInterval(timerInterval);
+  remainingTime=parseInt(document.getElementById("timer-minutes").value || 25)*60;
+  let m=Math.floor(remainingTime/60).toString().padStart(2,"0");
+  let s=(remainingTime%60).toString().padStart(2,"0");
+  document.getElementById("timer-display").textContent=`${m}:${s}`;
+}
+
+/* ---------------- BUDGET PLANNER ---------------- */
+function calcBudget(){
+  const income=parseFloat(document.getElementById("income").value) || 0;
+  const expenses=parseFloat(document.getElementById("expenses").value) || 0;
+  const savingsGoal=parseFloat(document.getElementById("savingsGoal").value) || 0;
+  const remaining=income-expenses-savingsGoal;
+  document.getElementById("budget-output").textContent=
+    remaining>=0?`You are on track! Remaining AED: ${remaining}`:`Warning! You are overspending by AED: ${Math.abs(remaining)}`;
+}
+function downloadBudget(){
+  const income=document.getElementById("income").value;
+  const expenses=document.getElementById("expenses").value;
+  const savings=document.getElementById("savingsGoal").value;
+  const content=`Budget Summary\nIncome: ${income}\nExpenses: ${expenses}\nSavings: ${savings}`;
+  const blob=new Blob([content],{type:"text/plain"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="budget-summary.txt";
+  a.click();
+}
+
+/* ---------------- BUDGET ORGANIZER (Advanced) ---------------- */
+let organizerCategories = JSON.parse(localStorage.getItem('organizerCats')||'[]');
+function renderCats(){
+  const tbody=document.querySelector('#cats-table tbody');
+  tbody.innerHTML='';
+  organizerCategories.forEach((c,idx)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${c.name}</td><td>AED ${Number(c.amount).toFixed(2)}</td><td><button onclick="removeCategory(${idx})">Remove</button></td>`;
+    tbody.appendChild(tr);
+  });
+}
+function addCategory(){
+  const name=document.getElementById('cat-name').value.trim();
+  const amount=parseFloat(document.getElementById('cat-amount').value) || 0;
+  if(!name){alert('Enter a category name'); return;}
+  organizerCategories.push({name,amount});
+  localStorage.setItem('organizerCats', JSON.stringify(organizerCategories));
+  document.getElementById('cat-name').value=''; document.getElementById('cat-amount').value='';
+  renderCats();
+}
+function removeCategory(i){ organizerCategories.splice(i,1); localStorage.setItem('organizerCats', JSON.stringify(organizerCategories)); renderCats(); }
+function clearCategories(){ if(confirm('Clear all categories?')){organizerCategories=[];localStorage.setItem('organizerCats','[]'); renderCats(); document.getElementById('organizer-summary').textContent='';}}
+function organizerSummary(){
+  const total = organizerCategories.reduce((s,c)=>s + Number(c.amount), 0);
+  document.getElementById('organizer-summary').textContent = `Total allocated: AED ${total.toFixed(2)} | Categories: ${organizerCategories.length}`;
+}
+function organizerDownloadCSV(){
+  if(organizerCategories.length===0){alert('No categories to download'); return;}
+  let csv='Category,Amount\n';
+  organizerCategories.forEach(c=> csv += `"${c.name}",${c.amount}\n`);
+  const blob = new Blob([csv], {type:'text/csv'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='budget-organizer.csv'; a.click();
+}
+renderCats();
+
+/* ---------------- SENIORS RIDDLES ---------------- */
+const seniorsRiddles=[
+  {q:"What has keys but can't open locks?",a:"piano"},
+  {q:"What has hands but can't clap?",a:"clock"},
+  {q:"What can travel around the world while staying in a corner?",a:"stamp"},
+  {q:"The more you take, the more you leave behind. What am I?",a:"footsteps"},
+  {q:"What has many teeth but cannot bite?",a:"comb"},
+  {q:"What gets wetter the more it dries?",a:"towel"},
+  {q:"What has one eye but cannot see?",a:"needle"},
+  {q:"What can you catch but not throw?",a:"cold"}
+];
+let currentRiddle=null;
+function showRiddle(){
+  currentRiddle=seniorsRiddles[Math.floor(Math.random()*seniorsRiddles.length)];
+  document.getElementById("riddle-question").textContent=currentRiddle.q;
+  document.getElementById("riddle-answer").value='';
+  document.getElementById("riddle-feedback").textContent='';
+}
+function checkRiddleAnswer(){
+  const userAnswer=document.getElementById("riddle-answer").value.trim().toLowerCase();
+  if(!currentRiddle){ document.getElementById("riddle-feedback").textContent="Please click 'Show a Random Riddle' first!"; return; }
+  if(userAnswer===currentRiddle.a.toLowerCase()){ document.getElementById("riddle-feedback").textContent="Correct! ✅"; }
+  else{ document.getElementById("riddle-feedback").textContent=`Incorrect! ❌ Answer: ${currentRiddle.a}`; }
+}
+
+/* ---------------- HEALTH TIPS ---------------- */
+const healthTips=[
+  "Drink plenty of water daily.",
+  "Take a short walk every morning.",
+  "Maintain a balanced diet with fruits and vegetables.",
+  "Do light exercises to stay active.",
+  "Get at least 7-8 hours of sleep."
+];
+function generateHealthTip(){
+  const tip=healthTips[Math.floor(Math.random()*healthTips.length)];
+  document.getElementById("health-output").textContent=tip;
+}
+
+/* ---------------- TEENS QUIZ ---------------- */
+const quizBank={
+  "Math":[ {q:"2+2=?",a:"4"}, {q:"5*6=?",a:"30"}, {q:"Square root of 81?",a:"9"} ],
+  "Science":[ {q:"Water formula?",a:"H2O"}, {q:"Planet known as Red Planet?",a:"Mars"}, {q:"Gas essential for breathing?",a:"Oxygen"} ],
+  "English":[ {q:"Synonym of 'happy'?",a:"joyful"}, {q:"Antonym of 'cold'?",a:"hot"}, {q:"Plural of 'mouse'?",a:"mice"} ]
+};
+function startQuiz(){
+  const subject=document.getElementById("quiz-subject").value;
+  const questions=quizBank[subject];
+  const question=questions[Math.floor(Math.random()*questions.length)];
+  const container=document.getElementById("quiz-container");
+  container.innerHTML=`<p>${question.q}</p>
+    <input type="text" id="quiz-answer" placeholder="Your answer"/>
+    <button onclick="checkAnswer('${question.a.replace("'", "\\'")}')">Submit</button>
+    <p id="quiz-feedback"></p>`;
+}
+function checkAnswer(correct){
+  const ans=document.getElementById("quiz-answer").value.trim();
+  document.getElementById("quiz-feedback").textContent=ans.toLowerCase()===correct.toLowerCase()?"Correct! ✅":`Incorrect! ❌ Answer: ${correct}`;
+}
+
+/* ---------------- CONTACT FORM ---------------- */
+function handleContactSubmit(event){
+  event.preventDefault();
+  const recipient=document.getElementById('recipient').value;
+  const name=document.getElementById('name').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const message=document.getElementById('message').value.trim();
+  if(recipient && name && email && message){
+    alert(`Thanks, ${name}! Your message has been received and will be sent to the ${recipient.replace('_',' ')}.`);
+    document.getElementById('recipient').value='';
+    document.getElementById('name').value='';
+    document.getElementById('email').value='';
+    document.getElementById('message').value='';
+  } else { alert('Please fill in all fields.'); }
+}
+function googleTranslateElementInit(){ new google.translate.TranslateElement({pageLanguage:'en'},'google_translate_element'); }
+
+/* ---------------- INTERVIEW TIPS (Unlimited, local) ---------------- */
+let tips = JSON.parse(localStorage.getItem('interviewTips') || '[]');
+if(tips.length===0){
+  tips = [
+    "Research the company before your interview.",
+    "Practice common interview questions and answers.",
+    "Dress appropriately and arrive early.",
+    "Prepare questions to ask the interviewer.",
+    "Bring a copy of your CV and any supporting documents."
+  ];
+  localStorage.setItem('interviewTips', JSON.stringify(tips));
+}
+function addTip(){
+  const v = document.getElementById('new-tip').value.trim();
+  if(!v){ alert('Type a tip to add'); return; }
+  tips.push(v);
+  localStorage.setItem('interviewTips', JSON.stringify(tips));
+  document.getElementById('new-tip').value='';
+  showAllTips();
+}
+function showRandomTip(){
+  const t = tips[Math.floor(Math.random()*tips.length)];
+  document.getElementById('tips-output').innerHTML = `<p><strong>Tip:</strong> ${t}</p>`;
+}
+function showAllTips(){
+  const out = tips.map((t,i)=>`<div style="margin-bottom:6px;"><strong>${i+1}.</strong> ${t}</div>`).join('');
+  document.getElementById('tips-output').innerHTML = out || '<p>No tips yet.</p>';
+}
+function clearTips(){ if(confirm('Clear all saved tips?')){ tips=[]; localStorage.setItem('interviewTips','[]'); document.getElementById('tips-output').innerHTML=''; } }
+showAllTips();
+
+/* ---------------- QUOTES (Unlimited) ---------------- */
+let quotes = JSON.parse(localStorage.getItem('quotes')||'[]');
+if(quotes.length===0){
+  quotes = [
+    {q:"Start where you are. Use what you have. Do what you can.", a:"Arthur Ashe"},
+    {q:"The only way to do great work is to love what you do.", a:"Steve Jobs"},
+    {q:"Believe you can and you're halfway there.", a:"Theodore Roosevelt"}
+  ];
+  localStorage.setItem('quotes', JSON.stringify(quotes));
+}
+function addQuote(){
+  const q = document.getElementById('new-quote').value.trim();
+  const a = document.getElementById('quote-author').value.trim();
+  if(!q){ alert('Type a quote to add'); return; }
+  quotes.push({q,a});
+  localStorage.setItem('quotes', JSON.stringify(quotes));
+  document.getElementById('new-quote').value=''; document.getElementById('quote-author').value='';
+  showRandomQuote();
+}
+function showRandomQuote(){
+  const item = quotes[Math.floor(Math.random()*quotes.length)];
+  document.getElementById('quote-output').innerHTML = `<blockquote style="font-weight:700;">"${item.q}"</blockquote><div class="small muted">${item.a || ''}</div>`;
+}
+function showAllQuotes(){
+  const out = quotes.map((t,i)=>`<div style="margin-bottom:8px;"><strong>${i+1}.</strong> "${t.q}" <span class="small muted">- ${t.a||'Unknown'}</span></div>`).join('');
+  document.getElementById('quote-output').innerHTML = out;
+}
+function showQuoteOfWeek(){
+  // Deterministic weekly quote based on week number
+  const d = new Date();
+  const start = new Date(d.getFullYear(),0,1);
+  const days = Math.floor((d - start) / (24*60*60*1000));
+  const week = Math.floor((days + start.getDay()+1)/7);
+  const idx = week % quotes.length;
+  const item = quotes[idx];
+  document.getElementById('quote-output').innerHTML = `<blockquote style="font-weight:700;">"${item.q}"</blockquote><div class="small muted">${item.a || ''}</div>`;
+}
+function clearQuotes(){ if(confirm('Clear saved quotes?')){ quotes=[]; localStorage.setItem('quotes','[]'); document.getElementById('quote-output').innerHTML=''; } }
+showQuoteOfWeek();
+
+/* ---------------- SONG CORNER NOTE ---------------- */
+/* We mixed links + embedded YouTube players in each zone. Embeds are added as <iframe> elements above. */
+
+/* ---------------- CALENDAR (Interactive) ---------------- */
+const calDays = document.getElementById('calendar-days');
+const calMonth = document.getElementById('calendar-month');
+let current = new Date();
+const notes = JSON.parse(localStorage.getItem('calendarNotes')||'{}');
+
+function renderCalendar(date = current){
+  calDays.innerHTML='';
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month+1, 0);
+  const startIdx = firstDay.getDay(); // 0=Sun...6=Sat
+  calMonth.textContent = `${firstDay.toLocaleString('default',{month:'long'})} ${year}`;
+  // Weekday labels
+  const labels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  labels.forEach(l=>{
+    const el = document.createElement('div'); el.className='day'; el.style.fontWeight='700'; el.textContent = l; calDays.appendChild(el);
+  });
+  // Fill blanks
+  for(let i=0;i<startIdx;i++){ const el = document.createElement('div'); el.className='day'; el.textContent=''; calDays.appendChild(el); }
+  // Fill days
+  for(let d=1; d<=lastDay.getDate(); d++){
+    const el = document.createElement('div'); el.className='day';
+    const iso = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    el.innerHTML = `<div style="font-weight:700">${d}</div>`;
+    if(iso===new Date().toISOString().slice(0,10)) el.classList.add('today');
+    if(notes[iso]){ const noteBadge = document.createElement('div'); noteBadge.style.fontSize='0.75rem'; noteBadge.style.marginTop='6px'; noteBadge.textContent = '📌'; el.appendChild(noteBadge); }
+    el.onclick = ()=>{ document.getElementById('note-date').value = iso; document.getElementById('note-text').value = notes[iso] || ''; };
+    calDays.appendChild(el);
+  }
+}
+function prevMonth(){ current = new Date(current.getFullYear(), current.getMonth()-1, 1); renderCalendar(); }
+function nextMonth(){ current = new Date(current.getFullYear(), current.getMonth()+1, 1); renderCalendar(); }
+function saveNote(){
+  const date = document.getElementById('note-date').value.trim();
+  const text = document.getElementById('note-text').value.trim();
+  if(!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)){ alert('Use YYYY-MM-DD format'); return; }
+  if(text){ notes[date] = text; } else { delete notes[date]; }
+  localStorage.setItem('calendarNotes', JSON.stringify(notes));
+  renderCalendar();
+  alert('Note saved locally');
+}
+function showNotes(){
+  const keys = Object.keys(notes).sort();
+  if(keys.length===0){ document.getElementById('notes-output').innerHTML = '<p class="small muted">No notes saved.</p>'; return; }
+  const out = keys.map(k=>`<div style="margin-bottom:6px;"><strong>${k}</strong>: ${notes[k]}</div>`).join('');
+  document.getElementById('notes-output').innerHTML = out;
+}
+renderCalendar();
+
+/* ---------------- CONTACT TRANSLATION ---------------- */
+function loadGoogleTranslate(){
+  const s = document.createElement('script');
+  s.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+  document.body.appendChild(s);
+}
+loadGoogleTranslate();
+
+/* ---------------- INTERVIEW / TIP & QUOTE UI INIT done above ---------------- */
+
+/* ---------------- EXTRA: Save states for some UI - optional ---------------- */
+/* Already using localStorage for organizerCats, interviewTips, quotes, calendarNotes */
+
+/* ---------------- END ---------------- */
+</script>
+</body>
+</html>
